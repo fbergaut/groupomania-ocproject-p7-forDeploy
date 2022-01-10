@@ -4,6 +4,23 @@ module.exports = function(app) {
     app.use(
         proxy("/users", {
             target:"https://groupomania-ocproject-p7-fb.herokuapp.com",
+            secure: false,
+            changeOrigin: true
+        })
+    );
+
+    app.use(
+        proxy("/posts", {
+            target:"https://groupomania-ocproject-p7-fb.herokuapp.com",
+            secure: false,
+            changeOrigin: true
+        })
+    );
+
+    app.use(
+        proxy("/jwt", {
+            target:"https://groupomania-ocproject-p7-fb.herokuapp.com",
+            secure: false,
             changeOrigin: true
         })
     );
