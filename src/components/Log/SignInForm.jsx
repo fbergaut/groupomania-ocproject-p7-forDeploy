@@ -16,7 +16,10 @@ const SignInForm = () => {
       data: {
         email,
         password,
-      }
+      },
+      validateStatus: (status) => {
+        return true; // I'm always returning true, you may want to do it depending on the status received
+      },
     })
       .then((res) => {
         console.log(res.data);
